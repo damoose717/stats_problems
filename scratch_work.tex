@@ -1,0 +1,68 @@
+\documentclass[12pt]{article}
+
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage[latin1]{inputenc}
+\usepackage{geometry}
+\usepackage{graphicx}
+\usepackage{titlesec}
+\usepackage{pagecolor}
+
+\date{}
+
+\begin{document}
+\pagecolor{white}
+
+\section{Question 1}
+
+$$n + d = 2011 <=> d = 2011 - n$$
+$$\frac{n} {d} < \frac{1}{3}$$
+$$\frac{n}{2011 - n} <  \frac{1}{3}$$
+$$3n < 2011 - n$$
+$$4n < 2011$$
+$$n < 502.75$$
+Due to the constraint that $n$ and $d$ are positive integers, the maximum value for $n$ is $502$. Therefore $d = 2011 - n = 2011 - 502 = 1509$.
+
+\section{Question 2}
+
+Let X be the random variable modeling the outcome of the bet, where $x_1$ is the amount by which one's money, $m$, is increased in the event that the bet is favorable, and $x_2$ is the amount by which $m$ is increased if the bet is not favorable. We know that $x_1$ and $x_2$ are complements. Therefore, the expectation of such a variable $X$ is:
+
+$$E[X; m] = \sum_i x_iP(x_i) = 3mP(x_1) - mP(x_2) = 3mP(x_1) - m(1 - P(x_1)) = 4mP(x_1) - m$$
+$$= m(4P(x_1) - 1)$$
+In order for the bet to be favorable, we would need the expectation of $X$ to be positive, i.e.,:
+
+$$E[X; m] = m(4P(x_1) - 1) > 0$$
+$$P(x_1) > 0.25$$
+Let $n$ be the number of face cards in the first 5 cards, and let $c$ be the event where the sixth card is a face card, i.e., one's money is increased. Then:
+
+$$P(c | n = i) = \frac{12 - i}{47} $$
+Therefore:
+$$P(c | n = 0) = 0.255$$
+$$P(c | n = 1) =  0.234$$
+Thus we can see that the only way the bet is favorable (i.e., $P(x_1) = P(c | n = i) > 0.25$) is when $i = 0$. We now need to figure out the probability of such an occurrence:
+
+$$P(n = 0) = \frac{{12 \choose 0}{40 \choose 5}}{{52 \choose 5}} = 0.25318$$
+
+\section{Question 3}
+
+We have the following parameters for the Poisson distribution:
+
+$$\lambda = 100 / 5 = 20$$
+$$\alpha = 0.05$$
+$$n = 60$$
+$$k = n\lambda = (60)(20) = 1200$$
+
+$$CI = [\frac{1}{2}\chi^2(\frac{\alpha}{2}; 2k), \frac{1}{2}\chi^2(1 - \frac{\alpha}{2}; 2k + 2)]
+= [\frac{1}{2}\chi^2(0.025; 2400), \frac{1}{2}\chi^2(0.975; 2402)]
+= [1133.1, 1269.9]$$
+
+\section{Question 4}
+
+This is a one-sided Z-test.
+
+$$Z^* = \frac{\hat{p} - p_0}{\sqrt{\frac{p_0(1-p_0)}{n}}}  = \frac{(\frac{26}{200} - 0.1)}{\sqrt{\frac{0.1(0.9)}{200}}} = 1.414$$
+$$p = P(Z \geq Z^*) = 0.0787 > 0.05$$
+Therefore we fail to reject the null hypothesis.
+
+\end{document}
